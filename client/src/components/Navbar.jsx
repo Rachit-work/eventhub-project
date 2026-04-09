@@ -17,7 +17,7 @@ export default function Navbar() {
         setLoadingRole(true);
         try {
           // Fetching fresh role data from your backend
-          const res = await fetch(`http://localhost:5000/api/user/${currentUser.uid}`);
+          const res = await fetch(`https://eventhub-backend.onrender.com/api/user/${currentUser.uid}`);
           
           if (!res.ok) throw new Error("User not found in database");
           

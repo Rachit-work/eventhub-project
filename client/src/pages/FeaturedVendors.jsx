@@ -9,7 +9,7 @@ export default function FeaturedVendors() {
   useEffect(() => {
     const fetchFeatured = async () => {
       try {
-        const res = await fetch('http://localhost:5000/api/vendors');
+        const res = await fetch('https://eventhub-project-w814.onrender.com/api/vendors');
         if (!res.ok) throw new Error('Failed to fetch');
         const data = await res.json();
         

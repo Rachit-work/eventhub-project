@@ -20,15 +20,15 @@ export default function CustomerDashboard() {
   const loadCustomerData = useCallback(async (uid) => {
     try {
       // 1. Fetch User Profile
-      const userRes = await fetch(`http://localhost:5000/api/user/${uid}`);
+      const userRes = await fetch(`https://eventhub-backend.onrender.com/api/user/${uid}`);
       if (!userRes.ok) throw new Error("Profile not found");
       const userData = await userRes.json();
       setDbUser(userData);
 
       // 2. Fetch Bookings & Inquiries using UID (Matches updated index.js)
       const [bkRes, iqRes] = await Promise.all([
-        fetch(`http://localhost:5000/api/customer/bookings/${uid}`),
-        fetch(`http://localhost:5000/api/inquiries/customer/${uid}`)
+        fetch(`https://eventhub-backend.onrender.com/api/customer/bookings/${uid}`),
+        fetch(`https://eventhub-backend.onrender.com/api/inquiries/customer/${uid}`)
       ]);
 
       if (bkRes.ok) setBookings(await bkRes.json());

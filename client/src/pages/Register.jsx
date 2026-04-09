@@ -28,7 +28,7 @@ export default function Register() {
         event_type: role === 'vendor' ? 'General Vendor' : '' 
       };
 
-      await axios.post('http://localhost:5000/api/register', registrationData);
+      await axios.post('https://eventhub-backend.onrender.com/api/register', registrationData);
 
       // 3. Save to localStorage to avoid "Guest" bug
       const userToStore = {

@@ -9,7 +9,7 @@ export default function AdminDashboard() {
   useEffect(() => {
     const fetchAdminData = async () => {
       try {
-        const res = await fetch('http://localhost:5000/api/admin/overview');
+        const res = await fetch('https://eventhub-backend.onrender.com/api/admin/overview');
         if (res.ok) {
           const data = await res.json();
           setStats(data.stats);
@@ -26,7 +26,7 @@ export default function AdminDashboard() {
 
   const handleApprove = async (firebase_uid) => {
     try {
-      const res = await fetch('http://localhost:5000/api/admin/approve-vendor', {
+      const res = await fetch('https://eventhub-backend.onrender.com/api/admin/approve-vendor', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ firebase_uid })

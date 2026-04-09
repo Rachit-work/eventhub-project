@@ -14,7 +14,7 @@ export const AuthProvider = ({ children }) => {
       setUser(currentUser);
       if (currentUser) {
         try {
-          const res = await fetch(`http://localhost:5000/api/user/${currentUser.uid}`);
+          const res = await fetch(`https://eventhub-backend.onrender.com/api/user/${currentUser.uid}`);
           const data = await res.json();
           setRole(data.role?.toLowerCase() || 'customer');
         } catch (err) {

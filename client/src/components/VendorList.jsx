@@ -9,7 +9,7 @@ export default function VendorList() {
 
   useEffect(() => {
     // Calling the main vendors endpoint
-    fetch('http://localhost:5000/api/vendors')
+    fetch('https://eventhub-project-w814.onrender.com/api/vendors')
       .then((res) => res.json())
       .then((data) => {
         // Limit to top 5 for the homepage row

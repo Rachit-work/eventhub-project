@@ -17,7 +17,7 @@ export default function Marketplace() {
 
   useEffect(() => {
     // CHANGE 1: Explicitly log the fetch for debugging connection errors
-    fetch('http://localhost:5000/api/vendors')
+    fetch('https://eventhub-project-w814.onrender.com/api/vendors')
       .then(res => {
         if (!res.ok) throw new Error("Server response was not ok");
         return res.json();
