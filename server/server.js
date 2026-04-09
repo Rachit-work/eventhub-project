@@ -241,4 +241,6 @@ app.post('/api/bookings', async (req, res) => {
   }
 });
 
-app.listen(5000, () => console.log("🚀 Server running on port 5000"));
+// --- SERVER START ---
+const PORT = process.env.PORT || 5000; // Use Render's port or default to 5000
+app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
