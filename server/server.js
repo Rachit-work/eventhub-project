@@ -28,14 +28,15 @@ checkConnection();
 
 // --- 1. USER & AUTH ---
 app.get('/api/user/:uid', async (req, res) => {
-  const { uid } = req.params;
-  try {
-    const result = await sql`SELECT role, full_name FROM users WHERE firebase_uid = ${uid}`;
-    if (result.length > 0) res.json(result[0]);
-    else res.status(404).json({ error: "User not found" });
-  } catch (err) {
-    res.status(500).json({ error: "Server error" });
-  }
+  const { uid } = req.params;
+  try {
+    // Add email to the SELECT
+    const result = await sql`SELECT role, full_name, email FROM users WHERE firebase_uid = ${uid}`;
+    if (result.length > 0) res.json(result[0]);
+    else res.status(404).json({ error: "User not found" });
+  } catch (err) {
+    res.status(500).json({ error: "Server error" });
+  }
 });
 
 app.post('/api/register', async (req, res) => {

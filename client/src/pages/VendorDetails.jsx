@@ -47,14 +47,14 @@ const loggedInUser = JSON.parse(localStorage.getItem('user')) || { uid: null };
 
   const fetchReviews = async () => {
     try {
-      const res = await fetch(`https://eventhub-backend.onrender.com/api/reviews/${id}`);
+      const res = await fetch(`https://eventhub-project-w814.onrender.com/api/reviews/${id}`);
       if (res.ok) setReviews(await res.json());
     } catch (err) { console.error(err); }
   };
 
   const fetchPackages = async () => {
     try {
-      const res = await fetch(`https://eventhub-backend.onrender.com/api/packages/${id}`);
+      const res = await fetch(`https://eventhub-project-w814.onrender.com/api/packages/${id}`);
       if (res.ok) setPackages(await res.json());
     } catch (err) { console.error(err); }
   };
@@ -73,7 +73,7 @@ const loggedInUser = JSON.parse(localStorage.getItem('user')) || { uid: null };
     e.preventDefault();
     setSubmittingInquiry(true);
     try {
-      const res = await fetch(`https://eventhub-backend.onrender.com/api/inquiries`, {
+      const res = await fetch(`https://eventhub-project-w814.onrender.com/api/inquiries`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ 
@@ -95,7 +95,7 @@ const loggedInUser = JSON.parse(localStorage.getItem('user')) || { uid: null };
     
     setSubmittingBooking(true);
     try {
-      const res = await fetch(`https://eventhub-backend.onrender.com/api/bookings`, {
+      const res = await fetch(`https://eventhub-project-w814.onrender.com/api/bookings`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ 
@@ -116,7 +116,7 @@ const loggedInUser = JSON.parse(localStorage.getItem('user')) || { uid: null };
   const handleSubmitReview = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch(`https://eventhub-backend.onrender.com/api/reviews`, {
+      const res = await fetch(`https://eventhub-project-w814.onrender.com/api/reviews`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ 

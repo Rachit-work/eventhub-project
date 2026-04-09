@@ -11,7 +11,7 @@ export default function Settings() {
     const unsubscribe = onAuthStateChanged(auth, async (userAuth) => {
       if (userAuth) {
         try {
-          const res = await fetch(`https://eventhub-backend.onrender.com/api/user/${userAuth.uid}`);
+          const res = await fetch(`https://eventhub-project-w814.onrender.com/api/user/${userAuth.uid}`);
           const data = await res.json();
           // Ensure gallery_urls is always an array to prevent .join errors
           setDbUser({
@@ -34,7 +34,7 @@ export default function Settings() {
     e.preventDefault();
     setSaving(true);
     try {
-      const res = await fetch(`https://eventhub-backend.onrender.com/api/user/update`, {
+      const res = await fetch(`https://eventhub-project-w814.onrender.com/api/user/update`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(dbUser)

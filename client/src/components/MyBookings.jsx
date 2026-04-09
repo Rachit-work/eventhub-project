@@ -23,7 +23,7 @@ useEffect(() => {
   const fetchMyBookings = async () => {
     try {
       // FIX: Changed 'user-bookings' to 'customer/bookings' to match index.js
-      const res = await fetch(`https://eventhub-backend.onrender.com/api/customer/bookings/${loggedInUser.uid}`);
+      const res = await fetch(`https://eventhub-project-w814.onrender.com/api/customer/bookings/${loggedInUser.uid}`);
       if (res.ok) {
         const data = await res.json();
         setBookings(data);

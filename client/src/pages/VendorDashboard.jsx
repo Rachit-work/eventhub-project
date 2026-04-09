@@ -13,7 +13,7 @@ const VendorDashboard = () => {
     const fetchDashboardData = useCallback(async (uid) => {
         if (!uid) return;
         try {
-            const response = await fetch(`https://eventhub-backend.onrender.com/api/vendor/dashboard-overview/${uid}`);
+            const response = await fetch(`https://eventhub-project-w814.onrender.com/api/vendor/dashboard-overview/${uid}`);
             if (response.ok) {
                 const result = await response.json();
                 setData(result);
@@ -43,7 +43,7 @@ const VendorDashboard = () => {
     // 3. Update status and refresh data
     const updateStatus = async (bookingId, newStatus) => {
         try {
-            const response = await fetch(`https://eventhub-backend.onrender.com/api/bookings/${bookingId}/status`, {
+            const response = await fetch(`https://eventhub-project-w814.onrender.com/api/bookings/${bookingId}/status`, {
                 method: 'PATCH',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ status: newStatus })
