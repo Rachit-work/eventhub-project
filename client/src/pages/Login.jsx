@@ -19,7 +19,8 @@ export default function Login() {
       const uid = userCredential.user.uid;
 
       // 1. Fetch user role from your Node.js backend
-      const res = await fetch(`https://eventhub-backend.onrender.com/api/user/${uid}`);
+      // CHANGE THIS LINE:
+const res = await fetch(`https://eventhub-project-w814.onrender.com/api/user/${uid}`);
       
       if (!res.ok) {
         throw new Error("User record not found in database. Please register first.");
