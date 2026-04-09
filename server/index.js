@@ -8,7 +8,7 @@ const sql = neon(process.env.DATABASE_URL);
 
 // --- MIDDLEWARE ---
 app.use(cors({
-  origin: 'http://localhost:5173', 
+  origin: ['http://localhost:5173', 'https://eventhub-72dce.web.app'], 
   methods: ['GET', 'POST', 'DELETE', 'PUT', 'PATCH'],
   allowedHeaders: ['Content-Type']
 }));
@@ -350,4 +350,5 @@ app.post('/api/admin/approve-vendor', async (req, res) => {
 });
 
 // --- SERVER START ---
-app.listen(5000, () => console.log("🚀 Server running on port 5000"));
+const PORT = process.env.PORT || 5000; // Use Render's port or default to 5000
+app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`))
